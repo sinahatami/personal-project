@@ -1,0 +1,246 @@
+<!--Main Navigation-->
+<header class="intro-header" id="home">
+  <!--Navbar-->
+  <mdb-navbar class="fixed-top" SideClass="navbar navbar-expand-lg navbar-dark scrolling-navbar" id="blur" @navbar>
+    <mdb-navbar-brand>
+      <a style="color:rgb(35, 197, 186)" class="logo navbar-brand waves-light" mdbWavesEffect href=""><strong>PEDRAM</strong></a>
+    </mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto" role="navigation">
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a style="color:rgb(35, 197, 186)" class="nav-link" [ngx-scroll-to]="'#home'">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a style="color:rgb(35, 197, 186)" class="nav-link" href="#about" [ngx-scroll-to]="'#about'">about</a>
+        </li>
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a style="color:rgb(35, 197, 186)" class="nav-link" [ngx-scroll-to]="'#me'">me</a>
+        </li>
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a style="color:rgb(35, 197, 186)" class="nav-link" [ngx-scroll-to]="'#contact'">contact</a>
+        </li>
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a style="color:rgb(35, 197, 186)" class="nav-link" routerLink="/blog">blog</a>
+        </li>
+      </ul>
+    </links>
+  </mdb-navbar>
+  <!--/Navbar-->
+  
+  <!--Background-->
+  <div class="background-image view" id="home">
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+      <div class="container">
+        <div class="row pt-5 mt-3 w-100">
+          <div class="col-md-12">
+            <div class="text-center">
+              <h2 class="animated flip h1 h1-reponsive white-text font-up font-bold mb-3 wow fadeInDown" data-wow-delay="0.3s"><strong>Minimalist intro</strong></h2>
+              <hr style="color:aliceblue">
+              <h5 class="animated bounceInLeft font-up mb-5 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Pedram Ramezani</strong></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <!--/Background-->
+</header>
+<!--/Main Navigation-->
+
+<!--Carousel-->
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+  <mdb-carousel-item>
+    <div class="view w-100">
+      <img class="d-block w-100" src="../../assets/images/download2.jpeg" alt="First slide">
+      <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+    </div>
+    <div class="carousel-caption">
+      <h3 class="h3-responsive">Light mask</h3>
+      <p>First text</p>
+    </div>
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <div class="view w-100">
+      <img class="d-block w-100" src="../../assets/images/download.jpeg" alt="Second slide">
+      <div class="waves-light" mdbWavesEffect></div>
+    </div>
+    <div class="carousel-caption">
+      <h3 class="h3-responsive">Strong mask</h3>
+      <p>Secondary text</p>
+    </div>
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <div class="view w-100">
+      <img class="d-block w-100" src="../../assets/images/download1.jpeg" alt="Third slide">
+      <div class="waves-light" mdbWavesEffect></div>
+    </div>
+    <div class="carousel-caption">
+      <h3 class="h3-responsive">Slight mask</h3>
+      <p>Third text</p>
+    </div>
+  </mdb-carousel-item>
+</mdb-carousel>
+<!--/Carousel-->
+
+<!--About-->
+<div class="about" id="about">
+  <div class="inabout">
+    <h1 class="aboutH">About</h1>
+    <img src="../../assets/images/photo_۲۰۱۸-۱۲-۲۸_۰۱-۲۳-۰۴.jpg" alt="" class="personal-img">
+    <div class="para">
+      <p>Hi, I'm Pedram! This is my design portfolio where I share all of my favorite work. When I'm not working, I enjoy exercising, playing video games, drinking good coffee, and more.
+        If you 'd like to follow me on Twitter, my username is <a href="">@pedram</a>	</p>
+    </div>
+  </div>
+</div>
+<!--/About-->
+
+<!--Timeline-->
+<sn-scroll-spy-section id="me" for="foo" class="time" style="display: inline-block;width: 100%;">
+  <h1 class="timelineH">Me</h1><br><br>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-timeline7">
+                <div class="timeline">
+                    <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                    <span class="year">2018</span>
+                    <div class="timeline-content">
+                        <h5 class="title">Web Desginer</h5>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis felis vitae risus pulvinar tincidunt. Nam ac venenatis enim. Aenean hendrerit justo sed.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-icon"><i class="fa fa-rocket"></i></div>
+                    <span class="year">2017</span>
+                    <div class="timeline-content">
+                        <h5 class="title">Web Developer</h5>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis felis vitae risus pulvinar tincidunt. Nam ac venenatis enim. Aenean hendrerit justo sed.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-icon"><i class="fa fa-briefcase"></i></div>
+                    <span class="year">2016</span>
+                    <div class="timeline-content">
+                        <h5 class="title">Web Desginer</h5>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis felis vitae risus pulvinar tincidunt. Nam ac venenatis enim. Aenean hendrerit justo sed.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-icon"><i class="fa fa-mobile"></i></div>
+                    <span class="year">2015</span>
+                    <div class="timeline-content">
+                        <h5 class="title">Web Developer</h5>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis felis vitae risus pulvinar tincidunt. Nam ac venenatis enim. Aenean hendrerit justo sed.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline">
+                  <div class="timeline-icon"><i class="fa fa-bolt"></i></div>
+                  <span class="year">2014</span>
+                  <div class="timeline-content">
+                      <h5 class="title">Web Developer</h5>
+                      <p class="description">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis felis vitae risus pulvinar tincidunt. Nam ac venenatis enim. Aenean hendrerit justo sed.
+                      </p>
+                  </div>
+              </div>
+              <div class="timeline">
+                <div class="timeline-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+                <span class="year">2013</span>
+                <div class="timeline-content">
+                    <h5 class="title">Web Developer</h5>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis felis vitae risus pulvinar tincidunt. Nam ac venenatis enim. Aenean hendrerit justo sed.
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</sn-scroll-spy-section>
+<!--/Timeline-->
+
+<!--Contact-->
+<sn-scroll-spy-section id="contact" for="foo" class="contact">
+  <h1 class="hclass">Contact</h1>
+  <div class="charts">
+    <section class="z-depth-5 border border-dael info contact-form">
+      <p class="h3 mb-4 contact-me text-center">Me</p>
+      <ul class="contact-info">
+        <li class="list-info">
+            <i class="fas fa-phone float-left"></i>
+            <a href="tel:+98912xxxxxxx" class="keys">+98912xxxxxxx</a>
+        </li>
+        <li class="list-info">
+            <i class="fas fa-at"></i>
+            <a href="mailto:example@gmail.com" class="keys email-me">example@gmail.com</a>
+        </li>
+        <li class="list-info">
+            <i class="fab fa-twitter"></i>
+            <a href="http://twitter.com/intent/tweet?screen_name=pedram" class="keys">@pedram</a>
+        </li>
+      </ul>
+    </section>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="z-depth-5 formation text-center border border-dael contact-form form-right">
+      <p class="h3 mb-4 contact-me">Contact me</p>
+      <div class="md-form">
+        <input formControlName="contactFormName" mdbInput type="text" id="form1" class="form-control">
+        <label for="form1" class="">Name</label>
+        <div class="alert alert-danger" *ngIf="contactFormName.touched && contactFormName.invalid">
+          <div *ngIf="contactFormName.errors.required">name is required</div>
+          <div *ngIf="contactFormName.errors.maxlength">max name is 8 characters</div>
+          <div *ngIf="contactFormName.errors.minlength">max name is 4 characters</div>
+          <div *ngIf="contactFormName.errors.cannotContainSpace">you cannot contain space for your name</div>
+        </div>
+      </div>
+      <div class="md-form">
+        <input formControlName="contactFormEmail" mdbInput type="email" id="form1" class="form-control">
+        <label for="form1" class="">Email</label>
+        <div class="alert alert-danger" *ngIf="contactFormEmail.touched && contactFormEmail.invalid">
+          <div *ngIf="contactFormEmail.errors.email">email is wrong</div>
+          <div *ngIf="contactFormEmail.errors.required">email is required</div>
+        </div>
+      </div>
+      <div class="md-form">
+        <input formControlName="contactFormTel" mdbInput type="tel" id="form1" class="form-control">
+        <label for="form1" class="">Tel</label>
+        <div class="alert alert-danger" *ngIf="contactFormTel.touched && contactFormTel.invalid">
+          <div *ngIf="contactFormTel.errors.required">tel is required</div>
+          <div *ngIf="contactFormTel.errors.cannotContainSpace">tel is wrong</div>
+        </div>
+      </div>
+      <div class="md-form">
+        <textarea formControlName="contactFormComment" type="text" id="form7" class="md-textarea form-control" mdbInput></textarea>
+        <label for="form7">Comment</label>
+        <div class="alert alert-danger" *ngIf="contactFormComment.touched && contactFormComment.invalid">
+          <div *ngIf="contactFormComment.errors.required">comment is required</div>
+        </div>
+      </div>
+      <button mdbBtn outline="true" block="true" class="z-depth-0 send-button my-4 waves-effect" gradient="aqua" mdbWavesEffect type="submit" [disabled]="contactForm.invalid">Send</button>
+    </form>
+
+  </div>  
+</sn-scroll-spy-section>
+<!--/Contact-->
+
+<!--Footer-->    
+<app-footer></app-footer>
+<!--Footer--> 
+
+<!--Scroll to top-->
+<div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}" mdbWavesEffect>
+  <button (click)="scrollToTop()" class="go-top btn btn-floating btn-large red waves-ligh">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</div>
+<!--/Scroll to top-->

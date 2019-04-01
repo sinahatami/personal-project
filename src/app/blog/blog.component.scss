@@ -1,0 +1,36 @@
+.back-button {
+    margin: 100px auto;
+    text-align: center;
+    width: 40%;
+    padding: 20px 60px
+}
+section {
+    margin: 0 280px;
+    direction: rtl;
+    width: 70%;
+    height: auto;
+    text-align: center;
+    padding-bottom: 100px;
+}
+.pannel {
+    margin: 0 auto;
+    height: auto;
+}
+.images {
+    max-height: 600px;
+    max-width: 60%;
+    margin-top: 50px;
+}
+.paras {
+    margin-top: 20px;
+    margin-right: 20px;
+    direction: rtl;
+}
+@media screen and (max-width: 705px) {
+    .images {
+        width: 400px;
+    }
+    section {
+        margin: 0 auto
+    }
+}
