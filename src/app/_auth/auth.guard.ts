@@ -3,28 +3,32 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
+
 export class AuthenticationService {
   constructor(private http: HttpClient) { }    
   login(credentials) {
-      return this.http.post<any>(`{config.apiUrl}/users/authenticate`,credentials)
-          .pipe(map(user => {
-              if (user && user.token) {
-                  localStorage.setItem('currentUser', JSON.stringify(user));
+      return this.http.post<any>(`https://wwwresume.herokuapp.com/api-token-auth/`,credentials)
+          .pipe(map(response => {
+            let result = response
+              if (result && result.token) {
+                localStorage.setItem('currentUser', JSON.stringify(result));
+                return true
               }    
-              return user;
+              return false;
           }));
   }    
+
+
   logout() {
-      localStorage.removeItem('currentUser');
+    localStorage.removeItem('currentUser');
   }
-  isLoggedin: boolean = false;
+  
   isLoggedIn() {
-    if (JSON.parse(localStorage.getItem('currentUser')).auth_token == null) {
-      this.isLoggedin = false;
-      return this.isLoggedin;
+    if(localStorage.length >0 ){
+      return true
     }
     else {
-      return true;
-    }
+      return false
+    }  
   }
 }

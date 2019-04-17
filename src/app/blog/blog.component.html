@@ -1,7 +1,37 @@
-<button routerLink="/" mdbBtn type="button" class="back-button btn-block" color="mdb-color" mdbWavesEffect>برگشت به خانه</button>
+<div class="div-back">
+  <button routerLink="/" mdbBtn type="button" id="top" class="back-button" color="mdb-color" mdbWavesEffect>برگشت به خانه</button>
+</div>
+
+<button *ngIf="auth.isLoggedIn()" (click)="auth.logout()" class="btn btn-dark">Logout</button>
+
+
 <section class="z-depth-5 border border-dael">
-  <div class="pannel">
-    <img class="images" src="../../assets/images/MTUxNTgzODk3Mjk2MDUzNTE2.webp" alt="">
-    <app-ngx-editor *ngIf="x()" [placeholder]="'hello'" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
+  <div class="pannel" *ngFor="let items of Array">
+    <div class="details">
+      <div class="header display-block">
+      <h2 class="title">{{ items.title }}</h2>
+      <img class="images" src={{items.image}}>
+        <div style="width: 70%; margin: 0 auto; display: block;">
+          <p class="text">{{items.text}}</p>
+        </div>
+      </div>
+      <div class="footer display-block">
+        <p class="id">{{ items.id }}</p>
+        <p class="create">{{ items.created_date }}</p>
+        <p class="update">{{ items.updated_date }}</p>
+      </div>
+    </div>
   </div>
 </section>
+
+
+<div class="text-align cc">
+  <nav>
+    <ul class="cc pg-dark">
+      <li class="page-item"><a style="color: white" class="page-link" mdbWavesEffect [ngx-scroll-to]="'#top'" (click)="firstPage()">1</a></li>
+      <div *ngFor="let page of ArrayPages">
+        <li class="page-item"><a style="color: white" [ngx-scroll-to]="'#top'" class="page-link" mdbWavesEffect (click)="goPage()">{{ page }}</a></li>
+      </div>
+    </ul>
+  </nav>
+</div>

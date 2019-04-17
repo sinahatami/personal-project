@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxEditorModule } from 'ngx-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,6 +9,7 @@ import { ScrollSpyModule } from '@thisissoon/angular-scrollspy';
 import { InViewportModule } from '@thisissoon/angular-inviewport';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +38,9 @@ import { AuthenticationService } from './_auth/auth.guard';
     BrowserAnimationsModule,
     InViewportModule, ScrollSpyModule.forRoot(),
     HttpClientModule,
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+    CKEditorModule,
+    NgbModule
   ],
   providers: [
     ConnectionService,

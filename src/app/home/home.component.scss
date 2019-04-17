@@ -1,4 +1,6 @@
-
+.navbar-expand-lg {
+  color: red
+}
 a {
   scroll-behavior: smooth;
 }
@@ -16,13 +18,14 @@ a {
 }
 
 @media (min-width: 600px){
-.navbar.scrolling-navbar {
+  .navbar.scrolling-navbar {
     /* -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out; */
     -o-transition: background .5s ease-in-out,padding .5s ease-in-out;
     transition: background .5s ease-in-out,padding .5s ease-in-out;
     padding-top: 12px;
     padding-bottom: 12px;
-}}
+  } 
+}
 .navbar.scrolling-navbar {
   -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
   -o-transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -39,6 +42,19 @@ a {
 @media (max-width: 768px) {
   .navbar:not(.top-nav-collapse) {
     background: #78909c !important;
+  }
+  .info {
+    max-width: 21px
+  }
+}
+@media (max-width: 1200px) {
+  .info {
+    max-width: 50%;
+  }
+}
+@media (max-width: 990px) {
+  .the-blur {
+    display: none
   }
 }
 .background-image { 
@@ -62,13 +78,22 @@ h5 {
     height: 700px;
   }
 }
+.carousel {
+  height: 100%;
+}
 .time {
   background-color: rgb(117, 120, 133);
 }
-@media screen and (max-width: 1200px) {
-  .formation {
-    min-width: 500px;
-  }
+/* CSS used here will be applied after bootstrap.css */
+.the-blur {
+  position: fixed;
+  top:0;
+  width: 100%;
+  left: 0;
+  min-height: 57px;
+  background: rgba(0, 0, 0, 0.438);
+  z-index:1010;
+  filter: blur(10px);
 }
 .about {
   display: inline-block;
@@ -186,7 +211,7 @@ h5 {
   margin-top: 40px;
 }
 .info {
-  width: 40%;
+  width: 600px;
   margin: 30px auto;
   padding-bottom: 20px;
   background-color: #6bf5cb
@@ -212,7 +237,7 @@ h5 {
 .formation {
   height: auto;
   margin-top: 60px;
-  width: 50%;
+  max-width: 60%;
   margin: 100px auto;
   background-color: #c1ecc4
 }
@@ -300,6 +325,28 @@ a.active {
     padding-bottom: 12px;
 }}
 
+@media (max-width: 600px){
+  .personal-img {
+    max-width: 200px;
+  }
+  .keys {
+    margin-left: 5px;
+    color: rgb(151, 94, 94)
+  }
+}
+@media (max-width: 600px){ 
+  .keys {
+    font-size: 13px
+  }
+  .email-me {
+    font-size: 14px;
+  }
+}
+@media (max-width: 380px){ 
+  .email-me {
+    font-size: 12px;
+  }
+}
 .nav ul {
   list-style: none;
   text-align: center;

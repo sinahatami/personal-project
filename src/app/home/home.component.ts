@@ -3,8 +3,8 @@ import { Component ,Inject, HostListener, Renderer2, OnInit} from '@angular/core
 import { trigger, transition, style, animate } from '@angular/animations';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { SpaceValidators } from '../validators';
 import { ConnectionService } from '../_services/connection.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +22,7 @@ import { ConnectionService } from '../_services/connection.service';
 export class HomeComponent {
 
   windowScrolled: boolean;
-  constructor(private _renderer2: Renderer2, private http: HttpClient, @Inject(DOCUMENT) private document: Document, private fb: FormBuilder, private connectionService: ConnectionService) {
+  constructor(private _renderer2: Renderer2, private http: HttpClient, @Inject(DOCUMENT) private document: Document, private fb: FormBuilder, private connectionService: ConnectionService, private router: Router) {
 
   }
 
@@ -57,53 +57,48 @@ export class HomeComponent {
       })();
     }
   contactForm = new FormGroup({
-    contactFormName : new FormControl('', [
+    name : new FormControl('', [
       Validators.required,
       Validators.maxLength(8),
-      Validators.minLength(4),
-      SpaceValidators.cannotContainSpace
+      Validators.minLength(4)
     ]),
 
-    contactFormEmail : new FormControl('', [
+    email : new FormControl('', [
       Validators.compose([Validators.required, Validators.email]),
     ]),
 
-    contactFormTel : new FormControl('', [
-      Validators.required,
-      SpaceValidators.cannotContainSpace,
+    tell : new FormControl('', [
+      Validators.required
     ]),
 
-    contactFormComment : new FormControl('', [
+    comment : new FormControl('', [
       Validators.required,
     ])
   });
-  get contactFormName(){
-    return this.contactForm.get('contactFormName');
+  get name(){
+    return this.contactForm.get('name');
   }
 
-  get contactFormEmail() {
-    return this.contactForm.get('contactFormEmail');
+  get email() {
+    return this.contactForm.get('email');
   }
 
-  get contactFormTel() {
-    return this.contactForm.get('contactFormTel');
+  get tell() {
+    return this.contactForm.get('tell');
   }
 
-  get contactFormComment() {
-    return this.contactForm.get('contactFormComment');
+  get comment() {
+    return this.contactForm.get('comment');
   }
   onSubmit() {
     this.connectionService.sendMessage(this.contactForm.value).subscribe(() => {
       alert('Your message has been sent.');
       this.contactForm.reset();
       this.disabledSubmitButton = true;
-    }, error => {
-      console.log('Error', error);
-    });
+    },
+    );
   }
-  
 
-  
   public ngOnInit(){
     
   }

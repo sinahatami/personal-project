@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ConnectionService {
 
-  url: string = 'http://localhost:4200/';
+  url: string = 'http://wwwresume.herokuapp.com/email/';
   constructor(private http: HttpClient) { }
   sendMessage(messageContent: any) {
     return this.http.post(this.url,

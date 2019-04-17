@@ -3,6 +3,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from './../_auth/auth.guard';
 import { Router } from '@angular/router';
+import 'rxjs/add/operator/map'
 
 @Component({
   selector: 'app-login',
@@ -16,32 +17,32 @@ export class LoginComponent  {
               private router:Router) { }
 
   loginForm = new FormGroup({
-    loginFormUsername : new FormControl('', [
+    username : new FormControl('', [
       Validators.required
     ]),
-    loginFormPassword : new FormControl('', [
+    password : new FormControl('', [
       Validators.required
     ])
   });
 
-  get loginFormUserName() {
-    return this.loginForm.get('loginFormUsername')
+  get username() {
+    return this.loginForm.get('username')
   }
-  get loginFormPassword() {
-    return this.loginForm.get('loginFormPassword')
+  get password() {
+    return this.loginForm.get('password')
   }
 
-  credentials:any
-  invalidLogin: boolean;
-  onSubmit(credentials) {
-    this.auth.login(credentials)
+  
+  invalidLogin = false;
+  onSubmit() {
+    this.auth.login(this.loginForm.value)
     .subscribe(result => {
       if(result) {
-        this.router.navigate(['/blog']);
-        alert('You are admin now!!!');
-      }  
-      else 
+        this.router.navigate(['/blog'])
+      }
+      else {
         this.invalidLogin = true
+      }
     })
   }
 }
