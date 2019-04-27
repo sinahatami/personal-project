@@ -2,9 +2,6 @@
   <button routerLink="/" mdbBtn type="button" id="top" class="back-button" color="mdb-color" mdbWavesEffect>برگشت به خانه</button>
 </div>
 
-<button *ngIf="auth.isLoggedIn()" (click)="auth.logout()" class="btn btn-dark">Logout</button>
-
-
 <section class="z-depth-5 border border-dael">
   <div class="pannel" *ngFor="let items of Array">
     <div class="details">
@@ -22,16 +19,11 @@
       </div>
     </div>
   </div>
+  
+    <li><a mdbWavesEffect [ngx-scroll-to]="'#top'" (click)="firstPage()">1</a></li>
+    <div>
+      <li *ngFor="let page of ArrayPages"><a [ngx-scroll-to]="'#top'" mdbWavesEffect (click)="goPage(page)">{{ page }}</a></li>
+    </div>
 </section>
 
 
-<div class="text-align cc">
-  <nav>
-    <ul class="cc pg-dark">
-      <li class="page-item"><a style="color: white" class="page-link" mdbWavesEffect [ngx-scroll-to]="'#top'" (click)="firstPage()">1</a></li>
-      <div *ngFor="let page of ArrayPages">
-        <li class="page-item"><a style="color: white" [ngx-scroll-to]="'#top'" class="page-link" mdbWavesEffect (click)="goPage()">{{ page }}</a></li>
-      </div>
-    </ul>
-  </nav>
-</div>

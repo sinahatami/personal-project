@@ -1,9 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { AuthenticationService } from './../_auth/auth.guard';
 import { NgxEditorModule } from 'ngx-editor';
 import { Component, OnInit } from '@angular/core';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
 
-  constructor(public auth: AuthenticationService, private http: HttpClient,private router: Router) {
+  constructor(private http: HttpClient) {
     
   }
   
@@ -27,15 +24,11 @@ export class BlogComponent implements OnInit {
       .subscribe(res => {
         this.Array = res['results']
 
-
         let Count = res['count']
         let showNum = Count/5
         for(var eachNumPage = 2; eachNumPage <= showNum; eachNumPage++) {
           this.ArrayPages.push(eachNumPage)
         }
-        
-        this.Editor.isEnabled = false
-        
       })
   }
 
@@ -53,16 +46,5 @@ export class BlogComponent implements OnInit {
     })
   }
   
-  
-  public Editor = ClassicEditor;
-  
-
-  public onChange( { editor }: ChangeEvent ) {
-    const data = editor.getData();
-
-    console.log( data );
-  }
-
-
   
 }

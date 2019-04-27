@@ -16,17 +16,14 @@ import { AppComponent } from './app.component';
 import { BlogComponent } from './blog/blog.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
 import { ConnectionService } from './_services/connection.service';
-import { AuthenticationService } from './_auth/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogComponent,
     HomeComponent,
-    FooterComponent,
-    LoginComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +40,7 @@ import { AuthenticationService } from './_auth/auth.guard';
     NgbModule
   ],
   providers: [
-    ConnectionService,
-    AuthenticationService
+    ConnectionService
   ],
   bootstrap: [AppComponent]
 })
